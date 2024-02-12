@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.tlm.cloud/semantic-ui/2.4.1/semantic.min.css"
+    integrity="sha384-YgbKRapHUUSMbq+ZTy6HzAc3nOtKW8oZRhS9lTj7hqfP716Y/fXkBZrN/ncXepKQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.tlm.cloud/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <title>Discover Recovery: Sponsors</title>
+</head>
+
+<body>
+
+  <header>
+    <!-- container for time at the top of the page -->
+    <div id="time"></div> 
+    <!-- logout link that displays if the user is logged in -->
+    <a id="logout" class="mx-5" href="../index.html">Logout</a>
+  </header>
+
+  <nav class="navbar navbar-expand-sm navbar-dark">
+    <!--navigation bar settings: size for expansion and text color-->
+    <a class="navbar-brand mx-auto" href="#"></a>
+    <!--meeting modal button -->
+    <button id="meetingBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#meetingModal">
+      Next Meeting
+    </button>
+    <!--hamburger menu icon-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <!--links included in hamburger menu-->
+      <div class="navbar-nav m-auto">
+        <a class="nav-item nav-link" href="../index.html">Home</a>
+        <!--link to home page-->
+        <a class="nav-item nav-link" href="meetings.html">Meetings</a>
+        <!--link to meeting page-->
+        <a class="nav-item nav-link active" href="sponsor.html">Sponsorship</a>
+        <!--link to sponsor page-->
+        <a class="nav-item nav-link login" href="members.html">Login</a>
+        <!--link to members page-->
+        <a class="nav-item nav-link profile" href="join.html">Join Us!</a>
+        <!--link to join page-->
+      </div>
+    </div>
+  </nav>
+
+  <main class="jumbotron">
+    <!--bootstrap jumbotron component-->
+    <h2 class="col-md-12">Sponsorship</h2>
+    <h1 class="col-md-12">What <span class="black">is</span> it?</h1>
+    <div class="block col-md-3"></div>
+    <!--creates color block to add to the bottom of headers/sub-headers-->
+    <h3>Just get started</h3>
+    <p>A sponsor is more than what you may think... It's someone that has worked through the 12 steps and can guide you
+      on your journey into recovery. If you don't have a sponsor, you need one now. A temporary sponsor can be there for
+      you to help get you started and answer any questions you may have until you find the right sponsor for you. If you don't already have a sponsor, select one now by clicking the button below and be matched with a temporary sponsor today.</p>
+    <div id="loginBox">
+      <!-- button to access sponsor choice modal -->
+      <button id="sponsorBtn" type="button" class="btn btn-primary float-right" data-toggle="modal"
+        data-target="#sponsorModal">
+        Get a Sponsor
+      </button>
+      <!-- link to modal displaying the twelve steps -->
+      <a id="steps" href="#" data-toggle="modal" data-target="#stepsModal">What are the 12 steps?</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row float-right">
+        <!-- icons to empty social media links  -->
+        <a href="#"><img src="../img/facebook.png" alt="facebook icon" class="m-3" height="25"></a>
+        <a href="#"><img src="../img/linkedIn.png" alt="linkdin icon" class="m-3" height="25"></a>
+        <a href="#"><img src="../img/pinterest2.png" alt="pinterest icon" class="m-3" height="25"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!--Meeting Modal -->
+  <div class="modal fade" id="meetingModal" tabindex="-1" role="dialog" aria-labelledby="upcomingMeeting"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- meeting modal title -->
+          <h5 id="meetingModalTitle" class="modal-title">Next Meeting</h5>
+          <button type="button" class="close mr-1" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="meetingModalBody" class="modal-body">
+          <!-- containers for relevant meeting info. -->
+          <h5 id="nextMeetingName"></h5>
+          <span id="timeContainer"></span>
+          <hr>
+          <h2 id="nextMeetingAddress"></h2>
+          <p><span id="nextMeetingType"></span></p>
+          <p id="soonWarning"></p>
+        </div>
+        <div id="meetingModalFooter" class="modal-footer">
+          <!-- buttons to get a ride or skip to the next meeting -->
+          <button type="button" id="ride" class="btn btn-primary" data-trigger="hover" data-container="body" data-toggle="popover" data-placement="top" data-content="Click here to see if anyone has offered a ride to this meeting. If so get their number and give them a call">Get a Ride</button>
+          <button type="button" id="next" class="btn btn-secondary">Next Meeting</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Sponsor Modal -->
+  <div class="modal fade" id="sponsorModal" tabindex="-1" role="dialog" aria-labelledby="sponsorFind"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- sponsor modal title -->
+          <h5 id="sponsorModalTitle" class="modal-title"></h5>
+          <button type="button" class="close mr-1" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- containers for relevant sponsor info. -->
+        <div id="sponsorModalBody" class="modal-body">
+          <h4 id="sponsorName"></h4>
+          <p id="sponsorSex"></p>
+          <p id="sponsorAge"></p>
+          <hr>
+          <h3 id="sponsorNumber"></h3>
+        </div>
+        <div id="sponsorModalFooter" class="modal-footer">
+          <!-- buttons to select sponsor or skip to the next -->
+          <button type="button" id="sponsorSelect" class="btn btn-primary mr-4">Select</button>
+          <button type="button" id="sponsorNext" class="btn btn-secondary">Next Sponsor</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Steps Modal -->
+  <div class="modal fade" id="stepsModal" tabindex="-1" role="dialog" aria-labelledby="steps" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- twelve steps modal title -->
+          <h1 class="modal-title">The <span class="black">12 </span>Steps</h1>
+          <button type="button" class="close mr-1" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- content for the twelve step modal -->
+          <p class="stepsText"><span class="number">1. </span>We admitted that we were powerless over our
+            addiction, that our lives had become unmanageable.</p>
+          <hr>
+          <p class="stepsText"><span class="number">2. </span>We came to believe that a power greater than
+            ourselves could restore us to sanity.</p>
+          <hr>
+          <p class="stepsText"><span class="number">3. </span>We made a decision to turn our will and our lives
+            over to the care of God <span class="blue">as we understood him</span>.</p>
+          <hr>
+          <p class="stepsText"><span class="number">4. </span>We made a searching and fearless moral invenotory of
+            ourselves.</p>
+          <hr>
+          <p class="stepsText"><span class="number">5. </span>We admitted to God, to ourselves, and to another
+            human being the exact nature of our wrongs.</p>
+          <hr>
+          <p class="stepsText"><span class="number">6. </span>We were entirely ready to have God remove all these
+            defects of character.</p>
+          <hr>
+          <p class="stepsText"><span class="number">7. </span>We humbly asked Him to remove our shortcomings.</p>
+          <hr>
+          <p class="stepsText"><span class="number">8. </span>We made a list of all persons we had harmed, and
+            became willing to amends to them all.</p>
+          <hr>
+          <p class="stepsText"><span class="number">9. </span>We made direct amends to such people wherever
+            possible, except when to do so would injure them or others.</p>
+          <hr>
+          <p class="stepsText"><span class="number">10. </span>We continued to take personal inventory and when we
+            were wrong promptly admitted it.</p>
+          <hr>
+          <p class="stepsText"><span class="number">11. </span>We sought through prayer and meditation to improve
+            our conscious contact with God <span class="blue">as we understood Him</span>, praying only for
+            knowledge of His will for us and the power to carry that out.</p>
+          <hr>
+          <p class="stepsText"><span class="number">12. </span>Having had a spiritual awakening as a result of
+            these steps, we tried to carry this message to addicts, and to practice these principles in all of our
+            affairs.</p>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.tlm.cloud/anime/3.2.0/anime.min.js" integrity="sha384-JmTzX6unfJDiDQMoiypqCUI502SrA0RB+F//kF3GrhGq5FRh2rTca4us326Qg7Dl" crossorigin="anonymous"></script>  <script src="https://cdn.tlm.cloud/jquery/3.3.1/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.tlm.cloud/jquery/3.3.1/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.tlm.cloud/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.tlm.cloud/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.tlm.cloud/semantic-ui/2.4.1/semantic.min.js"
+    integrity="sha384-6urqf2sgCGDfIXcoxTUOVIoQV+jFr/Zuc4O2wCRS6Rnd8w0OJ17C4Oo3PuXu8ZtF"
+    crossorigin="anonymous"></script>
+  <script src="../js/member.js"></script>
+  <script src="../js/meeting.js"></script>
+  <script src="../js/sponsor.js"></script>
+  <script src="../js/homegroup.js"></script>
+  <script src="../js/time.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

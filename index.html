@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/css/bootstrap.min.css"
+    integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Discover Recovery</title>
+</head>
+
+<body>
+
+  <header>
+    <!-- container for time at the top of the page -->
+    <div id="time"></div>
+    <!-- logout link that displays if the user is logged in -->
+    <a id="logout" class="mx-5" href="index.html">Logout</a>
+  </header>
+
+  <nav class="navbar navbar-expand-sm navbar-dark">
+    <!--navigation bar settings: size for expansion and text color-->
+    <a class="navbar-brand mx-auto" href="#"></a>
+    <!-- meeting modal button -->
+    <button id="meetingBtn" type="button" class="btn btn-primary nextMeetingBtn" data-toggle="modal"
+      data-target="#meetingModal">
+      Next Meeting
+    </button>
+    <!--hamburger menu icon-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <!--links included in hamburger menu-->
+      <div class="navbar-nav m-auto">
+        <a class="nav-item nav-link active" href="index.html">Home</a>
+        <!--link to home page-->
+        <a class="nav-item nav-link" href="html/meetings.html">Meetings</a>
+        <!--link to meeting page-->
+        <a class="nav-item nav-link" href="html/sponsor.html">Sponsorship</a>
+        <!--link to sponsor page-->
+        <a class="nav-item nav-link login" href="html/members.html">Login</a>
+        <!--link to members page-->
+        <a class="nav-item nav-link profile" href="html/join.html">Join Us!</a>
+        <!--link to join page-->
+      </div>
+    </div>
+  </nav>
+
+  <main class="jumbotron">
+    <!--bootstrap jumbotron component-->
+    <h2 class="col-md-12">Welcome to</h2>
+    <h1 class="col-md-12">Discover <span class="black">Recovery </span></h1>
+    <div class="block col-md-3"></div>
+    <!--creates color block to add to the bottom of headers/sub-headers-->
+    <p class="col-md-12">A place to guide you into recovery with Narcotics Anonymous. Discover Recovery can help you
+      establish a few of the most important aspects of your recovery program.</p>
+    <p class="col-md-12"><u>Start now with these three easy steps.</u></p>
+    <ul>
+      <li class="importantLink"><a href="html/join.html">Create an Account.</a></li>
+      <li class="importantLink"><a href="html/meetings.html"><span class="blue">Get a Homegroup.</span></a></li>
+      <li class="importantLink"><a href="html/sponsor.html"><span class="blue">Get a Sponsor.</span></a></li>
+    </ul>
+    <button id="memberBtn" type="button" class="btn btn-primary m-2 float-right" data-toggle="modal"
+      data-target="#memberModal">Member Login</button>
+    <small class="float-right m-3"><u>If you're already a member, Log in here!</u></small>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row float-right">
+        <!-- icons to empty social media links  -->
+        <a href="#"><img src="img/facebook.png" alt="facebook icon" class="m-3" height="25"></a>
+        <a href="#"><img src="img/linkedIn.png" alt="linkdin icon" class="m-3" height="25"></a>
+        <a href="#"><img src="img/pinterest2.png" alt="pinterest icon" class="m-3" height="25"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!--Meeting Modal -->
+  <div class="modal fade" id="meetingModal" tabindex="-1" role="dialog" aria-labelledby="upcomingMeeting"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- meeting modal title -->
+          <h5 id="meetingModalTitle" class="modal-title">Next Meeting</h5>
+          <button type="button" class="close mr-1" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="meetingModalBody" class="modal-body">
+          <!-- containers for relevant meeting info. -->
+          <h5 id="nextMeetingName"></h5>
+          <span id="timeContainer"></span>
+          <hr>
+          <h2 id="nextMeetingAddress"></h2>
+          <p><span id="nextMeetingType"></span></p>
+          <p id="soonWarning"></p>
+        </div>
+        <div id="meetingModalFooter" class="modal-footer">
+          <!-- buttons to get a ride or skip to the next meeting -->
+          <button type="button" id="ride" class="btn btn-primary" data-trigger="hover" data-container="body"
+            data-toggle="popover" data-placement="top"
+            data-content="Click here to see if anyone has offered a ride to this meeting. If so get their number and give them a call">Get
+            a Ride</button>
+          <button type="button" id="next" class="btn btn-secondary">Next Meeting</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Member Modal -->
+  <div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="memberLogin" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Member Login</h5>
+          <button type="button" class="close mr-1" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <!--login form-->
+              <input id="loginEmail" type="email" placeholder="E-mail" required email="email"
+                class="form-control my-2" />
+              <!--email input of form-->
+              <input id="loginPassword" type="password" placeholder="Password" required password="password"
+                class="form-control my-2" />
+              <!--password input of form-->
+            </div>
+          </form>
+          <a href="html/join.html" class="my-3">Create Account</a>
+          <div class="modal-footer">
+            <p id="loginMessage"></p>
+            <hr>
+            <input id="loginCode" type="password" placeholder="Code" class="form-control my-2" data-trigger="hover"
+              data-container="body" data-toggle="popover" data-placement="top"
+              data-content="NOT REQUIRED. Enter your validation code here if you have one." />
+            <!--validation code input of form-->
+            <button type="button" id="login" class="btn btn-primary">Login</button>
+          </div>
+          <p class="tempMsg">Temporary Message- The access code is "222", use it to access additional features,
+            including "Offer A Ride" in the Next Meeting modal, and the "I want to be a sponsor" checkbox in the Update
+            Profile section.</p>
+          <p class="tempMsg">Normally this code would be given out at the meetings to actual verified members.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"
+    integrity="sha512-LfB+BcvR3zBt7ebVskhSWiSbEUiG3p5EcCprkieldsKhBeR6wpnLi0VpWC2GNgVGWP2n/skO8Bx2oKNjUhXCkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"
+    integrity="sha512-M+qMI1PHRcYcOpJzeJlaWbVVx2JJyPIwZas8or7dc97LZOokjvbpfRxymhVtlJLyjiF3wGyr0FJOA4DLONLVLw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"
+    integrity="sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/js/bootstrap.min.js"
+    integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+    integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="js/member.js"></script>
+  <script src="js/meeting.js"></script>
+  <script src="js/sponsor.js"></script>
+  <script src="js/homegroup.js"></script>
+  <script src="js/time.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

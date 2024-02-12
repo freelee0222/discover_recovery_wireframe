@@ -1,0 +1,301 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 10pt;
+  color: black;
+  min-width:375px;
+}
+
+main {
+  margin: 30px 30px 30px 15px;
+}
+
+header {
+  background-image: url(../img/naBlue.gif);
+  background-color:  rgb(29, 94, 172);
+  background-repeat: no-repeat;
+  background-size: 600px;
+  height: 125px;
+}
+
+footer {
+  height: 50px;
+  width: 100%;
+  color: white;
+  background-color: rgb(29, 94, 172);
+  margin-top: 50px;
+}
+
+/*--------------------------------------navbar settings--------------------------------------------*/
+nav {/*sets font-size and weigth of navbar links*/
+  font-size: 14pt;
+  font-weight: 200;
+}
+
+.navbar {/*sets background color of navbar*/
+  background-color: rgb(29, 94, 172);
+  margin-bottom: 50px;
+  min-height: 100px;
+}
+
+.navbar-toggler {/*moves hamburger menu to the left of the navbar*/
+ position: relative;
+ right: 300px;
+}
+
+.nav-item {/*spaces all nav-items*/
+margin-left: 30px;
+}
+
+/*---------------------------------------link settings----------------------------------------------*/
+a { /*changes default link color to primary blue*/
+  display: block;
+  text-decoration: underline;
+}
+
+a:hover {/*changes default hover color to black*/
+  color: black;
+}
+
+.importantLink {/*enlarges links on the home page*/
+  font-size: 18pt;
+  margin: 20px;
+}
+
+/*----------------------------------------typography settings----------------------------------------*/
+h1 {/*settings for large blue header text*/
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 60pt;
+  font-weight: 700;
+  color:  rgb(29, 94, 172);
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.black {/*settings for large black header text*/
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 60pt;
+  font-weight: 700;
+  color: black;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+h2 {/*settings for sub-header text*/
+  font-size: 16pt;
+  font-weight: 200;
+  color: black;
+  letter-spacing: 16px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+h3 {/*settings for paragraph title text*/
+  font-size: 26pt;
+  font-weight: 700;
+  color: black;
+  letter-spacing: 12px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 24pt;
+  color: rgb(29, 94, 172);
+  letter-spacing: 5px;
+  text-align: left;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+h5 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 14pt;
+  font-weight: 700;
+}
+
+p {/*settings for paragraph text*/
+  font-size: 14pt;
+  line-height: 45px;
+}
+
+#time { /*sets the font and position of the time */
+  font-size: 14pt;
+  color: white;
+  margin-right: 50px;
+  float: right;
+  font-weight: 300;
+}
+
+#logout { /*sets the font and position of the logout link*/
+  font-size: 16pt;
+  color: white;
+  text-decoration: underline;
+  position: absolute;
+  top: 20px;
+  left: 85%;
+}
+
+.block {/*creates color block to add to the bottom of headers/sub-headers*/
+  border: 1px solid  rgb(29, 94, 172);
+  background-color:  rgb(29, 94, 172);
+  height: 13px;
+  width: 220px;
+  margin: 5px 1px 40px 1px;
+}
+
+#homegroup-title, #cleanDate, #loginMessage { /*font sizes for labels*/
+  font-size: 12pt;
+  text-decoration: underline;
+}
+
+#nextMeetingName { /*font settings for title of meeting modal*/
+  font-size: 38px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+#soonWarning {/*font settings for text displayed in the meeting modal 15 minutes before the meeting starts*/
+  color: red;
+  font-size: 24pt;
+  font-weight: 800;
+}
+
+#notRequired {/*font settings for text displayed in the join us form above the not required section*/
+  color: red;
+  font-size: 14pt;
+  text-decoration: underline;
+}
+
+.number { /*sets the fonts for the twelve steps numbers in the steps modal*/
+  font-size: 24pt;
+  font-weight: 700;
+}
+
+.stepsText {/*sets the fonts for the twelve steps text  in the steps modal*/
+  font-size: 14pt;
+}
+
+.modal-dialog {
+  border: solid white 10px;
+}
+
+.tempMsg {
+  font-size: 12px;
+  line-height: 15px;
+}
+
+/*------------------------------------------- form settings------------------------------------------------ */
+form {/*creates a box for contact-us form*/
+  width: 60%;
+  min-width: 350px;
+  border: solid rgb(29, 94, 172) 5px;
+  box-shadow: 20px 10px 10px  black;
+  padding: 20px;
+  margin: auto;
+}
+
+#loginCode { /*resizes code box on the bottom of the login modal*/
+  width: 80px;
+  margin-right: 15px;
+  box-shadow: 10px 5px 5px  black;
+}
+
+#ride {
+  margin-right: 15px;
+}
+
+#joinBtn {
+  border-radius: 10px;
+  font-size: 24pt;
+  width: 80px;
+  height: 60px;
+}
+
+/*----------------------------------------bootstrap overrides-----------------------------------------------*/
+.jumbotron {/*changes background color of jumbotron*/
+  background-color: #f0f5ff;
+  box-shadow: 15px 10px 10px;
+}
+
+.card { /*width setting for meeting info. cards*/
+  width: 22rem;
+}
+
+button {/*adds box shadow to all buttons*/
+  box-shadow: 10px 5px 5px  black;
+}
+
+.close { /*resizes close button in all modals*/
+  font-size: 32pt;
+  box-shadow: none;
+}
+/*------------------------------changing font sizes and display for smaller screens-----------------------------*/
+@media screen and (max-width: 780px) {
+
+nav {
+    font-size: 10pt;
+}
+
+a {
+  margin: 3px;
+}
+
+form {/*removes the border from all forms*/
+  border: none;
+  box-shadow: none;
+}
+
+h1 {/*settings for large blue header text*/
+  font-size: 24pt;
+}
+
+.black {/*settings for large black header text*/
+  font-size: 24pt;
+}
+
+h2 {/*settings for sub-header text*/
+  font-size: 14pt;
+  letter-spacing: 10px;
+}
+
+h3 {/*settings for paragraph title text*/
+  font-size:20pt;
+  letter-spacing: 6px;
+  color: black;
+  margin-top:5px;
+}
+
+h4 {
+  font-size: 18pt;
+}
+
+p {/*settings for paragraph text*/
+  font-size: 12pt;
+  line-height: 30px;
+}
+
+.block {/*re-sizes color block to add to the bottom of all headers/sub-headers*/
+  height: 6px;
+  width: 110px;
+  margin: 5px 1px 20px 01px;
+}
+
+ }
+
+ @media screen and (max-width: 600px) {
+  .nextMeetingBtn {
+    position: relative;
+    right: 100px;
+  }
+ }
+
+ /*---------------------------changing font sizes and display for larger screens-------------------------------*/
+@media screen and (min-width: 1100px) {
+  .card {
+    width: 31rem;
+  }
+
+  main {
+    margin: 110px 110px 110px 55px;
+  }
+}

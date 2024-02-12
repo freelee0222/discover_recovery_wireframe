@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.tlm.cloud/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.tlm.cloud/semantic-ui/2.4.1/semantic.min.css"
+    integrity="sha384-YgbKRapHUUSMbq+ZTy6HzAc3nOtKW8oZRhS9lTj7hqfP716Y/fXkBZrN/ncXepKQ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <title>Discover Recovery: Meetings</title>
+</head>
+
+<body>
+
+  <header>
+    <!-- container for time at the top of the page -->
+    <div id="time"></div>
+    <!-- logout link that displays if the user is logged in -->
+    <a id="logout" class="mx-5" href="../index.html">Logout</a>
+  </header>
+
+  <nav class="navbar navbar-expand-sm navbar-dark">
+    <!--navigation bar settings: size for expansion and text color-->
+    <a class="navbar-brand mx-auto" href="#"></a>
+    <!--meeting modal button -->
+    <button id="meetingBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#meetingModal">
+      Next Meeting
+    </button>
+    <!--hamburger menu icon-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <!--links included in hamburger menu-->
+      <div class="navbar-nav m-auto">
+        <a class="nav-item nav-link" href="../index.html">Home</a>
+        <!--link to home page-->
+        <a class="nav-item nav-link active" href="meetings.html">Meetings</a>
+        <!--link to meeting page-->
+        <a class="nav-item nav-link" href="sponsor.html">Sponsorship</a>
+        <!--link to sponsor page-->
+        <a class="nav-item nav-link login" href="members.html">Login</a>
+        <!--link to members page-->
+        <a class="nav-item nav-link profile" href="join.html">Join Us!</a>
+        <!--link to contact page-->
+      </div>
+    </div>
+  </nav>
+
+  <main class="jumbotron">
+    <!--bootstrap jumbotron component-->
+    <h2 class="col-md-12">Meetings</h2>
+    <h1 class="col-md-12">Keep <span class="black">coming </span>back</h1>
+    <div class="block col-md-3"></div>
+    <!--creates color block to add to the bottom of headers/sub-headers-->
+    <p class="col-md-12">Attending meetings is the backbone of a solid program of recovery. Regularly identifying as
+      an addict is very important. Sharing your experience, strength, and hope is helpful for you, as well as others.
+      After all, we can only keep what we have by giving it away. A homegoup is the meeting you attend regularly and where you offer a majority of your service. If you don't already have a homegroup, select one now by clicking the link in the descriptions below.</p>
+  </main>
+
+<!-- bootstrap cards o contain specific meeting info. -->
+  <div class="container">
+
+    <!-- card row -->
+    <div class="row col-md-12">
+      <div class="col-md-2"></div> <!--empty div to create proper spacing-->
+      <div class="card m-2">
+        <div class="card-body">
+          <h5 class="card-title">Freedom Group</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Open Meeting</h6>
+          <h3>12:00 PM</h3>
+          <h6>Mon. - Fri.</h6>
+          <p class="card-text">The Freedom Group is a very welcoming meeting with an average attendance of 15-25 people.
+          </p>
+          <div class="block col-md-3"></div>
+          <h2>1500 Broadway</h2>
+          <a href="#" class="homegroupSelectModal" id="Freedom Group" data-toggle="modal"
+            data-target="#homegroupModal">Make it my
+            homegroup.</a>
+        </div>
+      </div>
+      <div class="card m-2">
+        <div class="card-body">
+          <h5 class="card-title">Rise & Shine</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Closed meeting</h6>
+          <h3>7:00 AM</h3>
+          <h6>Mon. - Fri.</h6>
+          <p class="card-text">The Rise & Shine group is a closed meeting and has an average attendance of 4-10 people.
+          </p>
+          <div class="block col-md-3"></div>
+          <h2>1683 1st Ave.</h2>
+          <a href="#" class="homegroupSelectModal" id="Rise & Shine Group" data-toggle="modal"
+            data-target="#homegroupModal">Make
+            it my homegroup.</a>
+        </div>
+      </div>
+      <div class="col-md-2"></div><!--empty div to create proper spacing-->
+    </div>
+    <!-- end of card row -->
+
+    <!-- card row -->
+    <div class="row col-md-12">
+      <div class="col-md-2"></div><!--empty div to create proper spacing-->
+      <div class="card m-2">
+        <div class="card-body">
+          <h5 class="card-title">Rocky Mtn. Group</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Open meeting</h6>
+          <h3>6:00 PM</h3>
+          <h6>Sat. & Sun.</h6>
+          <p class="card-text">The Rocky Mtn. Group is a close knit group that meets on the weekends. The average
+            attendance is 10-20 peopele</p>
+          <div class="block col-md-3"></div>
+          <h2>3800 Reserve</h2>
+          <a href="#" class="homegroupSelectModal" id="Rocky Mtn. Group" data-toggle="modal"
+            data-target="#homegroupModal">Make it
+            my homegroup.</a>
+        </div>
+      </div>
+      <div class="card m-2">
+        <div class="card-body">
+          <h5 class="card-title">Zoo Crew</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Open meeting</h6>
+          <h3>7:00 PM</h3>
+          <h6>Mon. - Fri.</h6>
+          <p class="card-text">Zoo Crew is a group that has a wide age range and an average attendance of about 20-30
+            people.</p>
+          <div class="block col-md-3"></div>
+          <h2>1500 Broadway</h2>
+          <a href="#" class="homegroupSelectModal" id="Zoo Crew" data-toggle="modal" data-target="#homegroupModal">Make
+            it my
+            homegroup.</a>
+        </div>
+      </div>
+      <div class="col-md-2"></div><!--empty div to create proper spacing-->
+    </div>
+    <!-- end of card row -->
+
+    <!-- card row -->
+    <div class="row col-md-12">
+      <div class="col-md-2"></div><!--empty div to create proper spacing-->
+      <div class="card m-2">
+        <div class="card-body">
+          <h5 class="card-title">Men's Group</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Men's meeting</h6>
+          <h3>7:00 PM</h3>
+          <h6>Tue. & Thur.</h6>
+          <p class="card-text">The Men's Group is a safe space to talk about issues that may be more comfortable to
+            bring up around only men. The average attendance is 7-15 men.</p>
+          <div class="block col-md-3"></div>
+          <h2>625 Overthere Dr.</h2>
+          <a href="#" class="homegroupSelectModal" id="Men's Group" data-toggle="modal"
+            data-target="#homegroupModal">Make it my
+            homegroup.</a>
+        </div>
+      </div>
+      <div class="card m-2">
+        <div class="card-body">
+          <h5 class="card-title">Hug Life</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Speaker meeting</h6>
+          <h3>7:00 PM</h3>
+          <h6>Mon. - Fri.</h6>
+          <p class="card-text">Hug Life is a speaker meeting that meets every weeknight and the average attendance is
+            anywhere from 10-50 people.</p>
+          <div class="block col-md-3"></div>
+          <h2>1500 Broadway</h2>
+          <a href="#" class="homegroupSelectModal" id="Hug Life" data-toggle="modal" data-target="#homegroupModal">Make
+            it my
+            homegroup.</a>
+        </div>
+      </div>
+      <div class="col-md-2"></div><!--empty div to create proper spacing-->
+    </div>
+    <!-- end of card row -->
+
+    <!-- card row -->
+    <div class="row col-md-12">
+      <div class="col-md-2"></div><!--empty div to create proper spacing-->
+      <div class="card m-2">
+        <div class="card-body">
+          <h5 class="card-title">Dopeless Hopefiends</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Open meeting</h6>
+          <h3>10:00 PM</h3>
+          <h6>Sun. - Mon.</h6>
+          <p class="card-text">Dopeless Hopefiends is a late night meeting that meets 7 days a week. The average
+            attendance is 5-15 people</p>
+          <div class="block col-md-3"></div>
+          <h2>2808 Speedway</h2>
+          <a href="#" class="homegroupSelectModal" id="Dopeless Hopefiends" data-toggle="modal"
+            data-target="#homegroupModal">Make
+            it my homegroup.</a>
+        </div>
+      </div>
+      <div class="card m-2">
+        <div class="card-body">
+          <h5 class="card-title">Women's Group</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Open meeting</h6>
+          <h3>7:00 PM</h3>
+          <h6>Mon. & Wed.</h6>
+          <p class="card-text">The Women's Group is a safe space to talk about issues that may be more comfortable to
+            bring up around only women. The average attendance is 5-10 women.</p>
+          <div class="block col-md-3"></div>
+          <h2>1405 Brooks</h2>
+          <a href="#" class="homegroupSelectModal" id="Women's Group" data-toggle="modal"
+            data-target="#homegroupModal">Make it my
+            homegroup.</a>
+        </div>
+      </div>
+      <div class="col-md-2"></div><!--empty div to create proper spacing-->
+    </div>
+    <!-- end of card row -->
+
+  </div>
+  <!-- end of card container -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row float-right">
+        <!-- icons to empty social media links  -->
+        <a href="#"><img src="../img/facebook.png" alt="facebook icon" class="m-3" height="25"></a>
+        <a href="#"><img src="../img/linkedIn.png" alt="linkdin icon" class="m-3" height="25"></a>
+        <a href="#"><img src="../img/pinterest2.png" alt="pinterest icon" class="m-3" height="25"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!--Meeting Modal -->
+  <div class="modal fade" id="meetingModal" tabindex="-1" role="dialog" aria-labelledby="upcomingMeeting"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- meeting modal title -->
+          <h5 id="meetingModalTitle" class="modal-title">Next Meeting</h5>
+          <button type="button mr-1" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="meetingModalBody" class="modal-body">
+          <!-- containers for relevant meeting info. -->
+          <h5 id="nextMeetingName"></h5>
+          <span id="timeContainer"></span>
+          <hr>
+          <h2 id="nextMeetingAddress"></h2>
+          <p><span id="nextMeetingType"></span></p>
+          <p id="soonWarning"></p>
+        </div>
+        <div id="meetingModalFooter" class="modal-footer">
+          <!-- buttons to get a ride or skip to the next meeting -->
+          <button type="button" id="ride" class="btn btn-primary" data-trigger="hover" data-container="body" data-toggle="popover" data-placement="top" data-content="Click here to see if anyone has offered a ride to this meeting. If so get their number and give them a call">Get a Ride</button>
+          <button type="button" id="next" class="btn btn-secondary">Next Meeting</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Homegroup Selection Modal -->
+  <div class="modal fade" id="homegroupModal" tabindex="-1" role="dialog" aria-labelledby="homegroup"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- homegroup modal title -->
+          <h5 id="homegroupModalTitle" class="modal-title"></h5>
+          <button type="button mr-1" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="homegroupModalBody" class="modal-body">
+          <!-- containers for relevant homegroup info. -->
+          <h5 id="homegroupModalText"></h5>
+        </div>
+        <div id="homegroupModalFooter" class="modal-footer">
+          <p id="homgroupClickMsg"></p>
+          <button type="button" id="homegroupSelect" class="btn btn-primary">Yes!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <script src="https://cdn.tlm.cloud/anime/3.2.0/anime.min.js" integrity="sha384-JmTzX6unfJDiDQMoiypqCUI502SrA0RB+F//kF3GrhGq5FRh2rTca4us326Qg7Dl" crossorigin="anonymous"></script>  <script src="https://cdn.tlm.cloud/jquery/3.3.1/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.tlm.cloud/jquery/3.3.1/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.tlm.cloud/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.tlm.cloud/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.tlm.cloud/semantic-ui/2.4.1/semantic.min.js"
+    integrity="sha384-6urqf2sgCGDfIXcoxTUOVIoQV+jFr/Zuc4O2wCRS6Rnd8w0OJ17C4Oo3PuXu8ZtF"
+    crossorigin="anonymous"></script>
+  <script src="../js/member.js"></script>
+  <script src="../js/meeting.js"></script>
+  <script src="../js/sponsor.js"></script>
+  <script src="../js/homegroup.js"></script>
+  <script src="../js/time.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
